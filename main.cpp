@@ -99,4 +99,28 @@ int main(int argc, const char * argv[]) {    // <- void main() doesn't seem to w
 	cout << pi << endl;
 
 	cout << PI << endl; // this is from the preprocessor directive
+
+
+
+
+	/** Operators **/
+	// Almost all of this is the same as PHP/Javascript
+	int ternaryTest;
+	ternaryTest = ((1)>2) ? 1 : 0;   // I need to wrap values in parens to avoid being "explicitly dead".  Okay...
+	cout << ternaryTest << endl;
+
+	int va,vb,vc;
+	va=2;
+	vb=7;
+	vc = (va>vb) ? va : vb;     // doesn't happen with valiables though.  Figure this out later.
+	cout << vc << '\n';
+
+	int commaSum;
+	int commaVar;
+	commaSum = (commaVar = 2, commaVar + 3);   // bizarre operator, not sure why anyone would use this
+	cout << commaSum << endl;   // 5
+	cout << commaVar << endl;   // 2
+
+	int varSize = sizeof(double);  // short is 2 (bytes), int is 4, float is 4, double is 8; 
+	cout << varSize << endl;
 }
