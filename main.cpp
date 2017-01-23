@@ -8,9 +8,12 @@
 
 // Chapters covered so far:
 // http://www.cplusplus.com/doc/tutorial/program_structure/
+// http://www.cplusplus.com/doc/tutorial/variables/
 
 #include <iostream>
 using namespace std;    					 // <- Need this to call cout with its unqualified name
+
+#define PI 3.1415							 // preprocessor directive, substitutes number for value without any type checking.
 
 int main(int argc, const char * argv[]) {    // <- void main() doesn't seem to work, only int main()
 	// whitespace doesn't matter
@@ -60,6 +63,9 @@ int main(int argc, const char * argv[]) {    // <- void main() doesn't seem to w
 	int baz(11);		// uniform initialization  (c++)
 	cout << foo + bar + baz; cout << "\n";
 
+	int reallyAFloat = 4.1235;		// This will save as 4, as it is cast as an int.
+	cout << reallyAFloat << endl;  
+
 	auto sameAsFoo = foo;	// auto keyword copies the type
 	sameAsFoo++;			// uses increment just the same
 	cout << sameAsFoo; cout << "\n";
@@ -70,6 +76,27 @@ int main(int argc, const char * argv[]) {    // <- void main() doesn't seem to w
 	thing_b = 2;
 	cout << thing_a + thing_b; cout << "\n";
 
-	string myString = "This is my string";
+	string myString = "This is my string";   // it says you need to #include <string> but it seems like you don't
 	cout << myString << endl;
+
+
+
+	/** Constants **/
+	int decInt = 75;			// integers can be cast as dec, oct and hex
+	int octInt = 0113;
+	int hexInt = 0x4b;
+	cout << decInt + octInt + hexInt << endl;
+
+	int suffixUnsignedLongInt = 80ul;   // ints can also be suffixed with any combination of l (long) and u (unsigned)
+	cout << suffixUnsignedLongInt << endl;
+	int suffixUnsignedLongInt2 = 90UL;   // Uppercase U/L works as well
+	cout << suffixUnsignedLongInt2 << endl;
+
+	float numberWithE = 6.02e23f;		// you can do the e thing and you can add f at the end
+	cout << numberWithE << endl;
+
+	const float pi = 3.14159;	// like a javascript const; immutable
+	cout << pi << endl;
+
+	cout << PI << endl; // this is from the preprocessor directive
 }
